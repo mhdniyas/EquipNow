@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Helpers\CurrencyFormatter;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,5 +24,10 @@ class AppServiceProvider extends ServiceProvider
         if(config('app.env') !== 'local') {
             \URL::forceScheme('https');
         }
+
+        // Add currency formatter directive
+        Blade::directive('currency', function ($expression) {
+            return "<?php echo \App\Helpers\CurrencyFormatter::format($expression); ?>";
+        });
     }
 }

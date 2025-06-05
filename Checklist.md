@@ -1,21 +1,22 @@
 # 🧾 Rental Shop App – Workflow Documentation Checklist
 
 ### ✅ Project Setup
-- [ ] Laravel installed with Breeze (auth system)
-- [ ] Tailwind CSS configured
-- [ ] Alpine.js set up for interactivity
-- [ ] Database seeded with:
-  - [ ] Equipment
-  - [ ] Categories/Subcategories
-  - [ ] Combos (bundled items)
-  - [ ] Roles: Admin, Salesman, Staff
+- [x] Laravel installed with Breeze (auth system)
+- [x] Tailwind CSS configured
+- [x] Alpine.js set up for interactivity
+- [x] Database seeded with:
+  - [x] Equipment models and controllers
+  - [x] Categories/Subcategories models
+  - [x] Customer management system
+  - [x] Booking management system (CRUD complete)
+  - [x] Roles: Admin, Salesman, Staff
 
 ---
 
 ### 👤 User Roles
-- [ ] Admin: Full access, reports, user mgmt
-- [ ] Salesman: Bookings, returns, daily report
-- [ ] Staff: Maintenance updates only
+- [x] Admin: Full access, reports, user mgmt
+- [x] Salesman: Bookings, returns, daily report
+- [x] Staff: Maintenance updates only
 
 ---
 
@@ -28,15 +29,15 @@
 - [ ] Flags any damaged/maintenance items
 
 #### 📥 New Booking (Walk-in / Phone)
-- [ ] Add customer or pick existing
-- [ ] Add equipment or select a combo
+- [x] Add customer or pick existing
+- [x] Add equipment or select a combo
 - [ ] Add bonus/free accessories (if any)
-- [ ] Set rental duration (from/to)
+- [x] Set rental duration (from/to)
 - [ ] Upload KYC (Aadhaar, etc.)
-- [ ] Auto-calculate rent + deposit
+- [x] Auto-calculate rent + deposit
 - [ ] Generate PDF invoice
-- [ ] Mark payment as Paid / Partial / Due
-- [ ] Confirm order → equipment marked reserved
+- [x] Mark payment as Paid / Partial / Due
+- [x] Confirm order → equipment marked reserved
 
 #### 📦 Combo/Bundle Booking
 - [ ] Pre-defined combo selected OR manually added
@@ -58,8 +59,8 @@
 - [ ] Admin reviews and re-enables item
 
 #### 📈 Daily Closing
-- [ ] Review daily bookings/returns
-- [ ] Cash/UPI report generated
+- [x] Review daily bookings/returns
+- [x] Cash/UPI report generated
 - [ ] WhatsApp/email summary sent to owner
 - [ ] Inventory reset for next day
 - [ ] Logout
@@ -67,10 +68,10 @@
 ---
 
 ### 🧰 Equipment Management
-- [ ] Create/Edit/Delete Equipment
-- [ ] Assign to category & subcategory
-- [ ] Track quantity in/out
-- [ ] Tag as Available / In Use / Maintenance
+- [x] Create/Edit/Delete Equipment
+- [x] Assign to category & subcategory
+- [x] Track quantity in/out
+- [x] Tag as Available / In Use / Maintenance
 
 ---
 
