@@ -75,12 +75,29 @@ Route::middleware('auth')->group(function () {
     // Category show route - must come AFTER more specific routes
     Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
     
-    // Booking routes
-    Route::resource('bookings', BookingController::class);
+    // Booking routes - specific routes first to avoid conflicts
+    Route::get('bookings/calendar', [BookingController::class, 'calendar'])->name('bookings.calendar');
+    Route::get('bookings/search/equipment', [BookingController::class, 'searchEquipment'])->name('bookings.search-equipment');
+    Route::get('bookings/search/customers', [BookingController::class, 'searchCustomers'])->name('bookings.search-customers');
+    Route::get('bookings/stats', [BookingController::class, 'getStats'])->name('bookings.stats');
+    Route::post('bookings/calculate-pricing', [BookingController::class, 'calculatePricing'])->name('bookings.calculate-pricing');
+    Route::post('bookings/bulk-action', [BookingController::class, 'bulkAction'])->name('bookings.bulk-action');
+    
+    // AJAX Booking routes
+    Route::post('bookings/{booking}/quick-confirm', [BookingController::class, 'quickConfirm'])->name('bookings.quick-confirm');
+    Route::post('bookings/{booking}/quick-activate', [BookingController::class, 'quickActivate'])->name('bookings.quick-activate');
+    Route::post('bookings/{booking}/quick-cancel', [BookingController::class, 'quickCancel'])->name('bookings.quick-cancel');
+    Route::post('bookings/{booking}/duplicate', [BookingController::class, 'duplicate'])->name('bookings.duplicate');
+    
+    // Booking specific actions
     Route::patch('bookings/{booking}/confirm', [BookingController::class, 'confirm'])->name('bookings.confirm');
     Route::patch('bookings/{booking}/activate', [BookingController::class, 'activate'])->name('bookings.activate');
     Route::patch('bookings/{booking}/cancel', [BookingController::class, 'cancel'])->name('bookings.cancel');
     Route::patch('bookings/{booking}/return', [BookingController::class, 'processReturn'])->name('bookings.return');
+    Route::get('bookings/{booking}/invoice', [BookingController::class, 'invoice'])->name('bookings.invoice');
+    
+    // Booking resource routes (must come last)
+    Route::resource('bookings', BookingController::class);
     
     // Payment routes
     Route::resource('payments', PaymentController::class);

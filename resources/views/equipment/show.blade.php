@@ -197,7 +197,7 @@
                         </a>
                     @endcan
                     
-                    @can('booking.create')
+                    @can('bookings.create')
                         <a href="{{ route('bookings.create', ['equipment_id' => $equipment->id]) }}" class="btn-secondary w-full flex items-center justify-center">
                             <i class="fas fa-calendar-plus mr-2"></i>
                             Create Booking

@@ -39,11 +39,11 @@ class RolePermissionSeeder extends Seeder
             'subcategory.delete',
 
             // Booking permissions
-            'booking.view',
-            'booking.create',
-            'booking.edit',
-            'booking.cancel',
-            'booking.return',
+            'bookings.view',
+            'bookings.create',
+            'bookings.edit',
+            'bookings.cancel',
+            'bookings.return',
 
             // Customer permissions
             'customer.view',
@@ -80,10 +80,10 @@ class RolePermissionSeeder extends Seeder
                 'equipment.view',
                 'category.view',
                 'subcategory.view',
-                'booking.view',
-                'booking.create',
-                'booking.edit',
-                'booking.return',
+                'bookings.view',
+                'bookings.create',
+                'bookings.edit',
+                'bookings.return',
                 'customer.view',
                 'customer.create',
                 'customer.edit',
@@ -94,7 +94,7 @@ class RolePermissionSeeder extends Seeder
             'Staff' => [
                 'equipment.view',
                 'equipment.maintenance',
-                'booking.view'
+                'bookings.view'
             ]
         ];
 
